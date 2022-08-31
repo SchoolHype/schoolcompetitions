@@ -14,6 +14,7 @@
 }
 
 .intro {
+  max-width: 80%;
   text-align: center;
 }
 
@@ -38,6 +39,13 @@
 
 .intro .mainText:hover {
   background-position: left;
+}
+
+.notifyInput {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
 }
 
 @keyframes gradient-animation {
@@ -126,4 +134,52 @@
 
 .categories_list li:nth-of-type(2n) {
   margin-left: auto;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1200px) {
+  .intro .mainText {
+    font-size: 12vw;
+  }
+
+  .fillerImage {
+    display: none;
+  }
+
+  .categories_list ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .categories_list ul li {
+    margin: 0 !important;
+  }
+
+}
+
+@media screen and (max-width: 760px) {
+  .intro h2 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+
+  .categoriesSection h2 {
+    margin: 2rem auto;
+    max-width: 90%;
+    font-size: 2rem;
+  }
+
+  .categories_list p {
+    margin: 1rem auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .notifyInput {
+    flex-direction: column;
+  }
 }

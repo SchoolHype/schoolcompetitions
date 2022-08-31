@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Button from '../components/Button'
 import ScrollIndicator from '../components/ScrollIndicator'
+import TextInput from '../components/TextInput'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -22,6 +24,12 @@ export default function Home() {
             School, District, State, Zonal or National Level <br/>
             100s of competitions to choose from
           </p>
+
+          <div className={styles.notifyInput}>
+            <TextInput placeholder={"Enter your email address"} name="email" />
+            <Button>Notify</Button>
+          </div>
+
         </div>
         <ScrollIndicator />
       </main>
