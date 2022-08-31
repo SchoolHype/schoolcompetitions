@@ -7,7 +7,7 @@ import TextInput from '../components/TextInput'
 import styles from '../styles/Home.module.css'
 
 import {toast} from 'react-toastify'
-import {addDoc, collection} from 'firebase/firestore'
+import {addDoc, collection, serverTimestamp} from 'firebase/firestore'
 import {database} from '../services/firebase'
 
 
@@ -19,7 +19,8 @@ export default function Home() {
     toast.promise(
       addDoc(collection(database,'schoolcompetitionsqueries'), {
           email: email,
-          message: 'Coming Soon Enquiry'
+          message: 'Coming Soon Enquiry',
+          time: serverTimestamp()
       }), 
       {
         pending: 'Adding details to support queue',
