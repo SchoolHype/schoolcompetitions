@@ -1,8 +1,8 @@
 import styles from './style.module.css'
 
-const TextInput = ({placeholder, onChange, name, id, className}) => {
+const TextInput = ({placeholder, onChange, name, id, className, value}) => {
     return (
-        <input className={`${styles.input} ${className}`} type="text" name={name} id={id} placeholder={placeholder} onChange={onChange} />
+        <input className={`${styles.input} ${className}`} type="text" value={value ?? ''} name={name} id={id} placeholder={placeholder} onChange={onChange} />
     )
 }
 

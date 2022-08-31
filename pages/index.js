@@ -1,11 +1,34 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
 import Button from '../components/Button'
 import ScrollIndicator from '../components/ScrollIndicator'
 import TextInput from '../components/TextInput'
 import styles from '../styles/Home.module.css'
 
+import {toast} from 'react-toastify'
+import {addDoc, collection} from 'firebase/firestore'
+import {database} from '../services/firebase'
+
+
 export default function Home() {
+
+  const [email, setEmail] = useState('')
+
+  const addQuery = () => {
+    toast.promise(
+      addDoc(collection(database,'schoolcompetitionsqueries'), {
+          email: email,
+          message: 'Coming Soon Enquiry'
+      }), 
+      {
+        pending: 'Adding details to support queue',
+        success: 'Added details to support queue',
+        error: 'An error occured while adding details to support queue Please try again later or contact us directly'
+      }
+    )
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -26,8 +49,8 @@ export default function Home() {
           </p>
 
           <div className={styles.notifyInput}>
-            <TextInput placeholder={"Enter your email address"} name="email" />
-            <Button>Notify</Button>
+            <TextInput placeholder={"Enter your email address"} value={email} onChange={e => setEmail(e.target.value)} name="email" />
+            <Button onClick={addQuery}>Notify</Button>
           </div>
 
         </div>
