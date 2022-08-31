@@ -25,6 +25,39 @@ export default function Home() {
         </div>
         <ScrollIndicator />
       </main>
+
+      <div className={styles.categoriesSection}>
+
+        <h2>All School Competitions at one place</h2>
+
+        <div className={styles.categories}>
+          <div className={styles.fillerImage}>
+            <Image src='/images/filler.jpg' layout="fill" />
+          </div>
+
+          <div className={styles.categories_list}>
+            <ul>
+              <li>Crossword puzzle</li>
+              <li>Poster making</li>
+              <li>Debate</li>
+              <li>Quiz</li>
+              <li>Photography</li>
+              <li>Essay writing</li>
+              <li>Best out of waste</li>
+              <li>Dancing</li>
+              <li>Group dancing</li>
+              <li>Singing</li>
+              <li>Storytelling</li>
+              <li>Standup comedy</li>
+              <li>Modelling</li>
+              <li>Code debugging</li>
+              <li>App development</li>
+            </ul>
+            <p>And much more!</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   )
 }
